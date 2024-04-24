@@ -56,7 +56,6 @@ class RegressionModel(object):
     to approximate sin(x) on the interval [-2pi, 2pi] to reasonable precision.
     """
     def __init__(self):
-        # Initialize your model parameters here
         self.learning_rate = 0.05
         self.w0 = nn.Parameter(1, 64)
         self.b0 = nn.Parameter(1, 64)
@@ -64,7 +63,6 @@ class RegressionModel(object):
         self.b1 = nn.Parameter(1, 64)
         self.w2 = nn.Parameter(64, 1)
         self.b2 = nn.Parameter(1, 1)
-        "*** YOUR CODE HERE ***"
 
     def run(self, x):
         """
@@ -123,7 +121,6 @@ class DigitClassificationModel(object):
     The goal is to sort each digit into one of 10 classes (number 0 through 9).
     """
     def __init__(self):
-        # Initialize your model parameters here
         self.learning_rate = 0.05
         self.batch_size = 60
         self.w0 = nn.Parameter(784, 512)
@@ -134,13 +131,12 @@ class DigitClassificationModel(object):
         self.b2 = nn.Parameter(1, 128)
         self.w3 = nn.Parameter(128, 10)
         self.b3 = nn.Parameter(1, 10)
-        "*** YOUR CODE HERE ***"
 
     def run(self, x):
         """
         Runs the model for a batch of examples.
 
-        Your model should predict a node with shape (batch_size x 10),
+        Model should predict a node with shape (batch_size x 10),
         containing scores. Higher scores correspond to greater probability of
         the image belonging to a particular class.
 
@@ -196,11 +192,9 @@ class LanguageIDModel(object):
         # Our dataset contains words from five different languages, and the
         # combined alphabets of the five languages contain a total of 47 unique
         # characters.
-        # You can refer to self.num_chars or len(self.languages) in your code
         self.num_chars = 47
         self.languages = ["English", "Spanish", "Finnish", "Dutch", "Polish"]
 
-        # Initialize your model parameters here
         self.batch_size = 50
         self.dimensions = len(self.languages)
         self.hidden_dimensions = 612
@@ -219,7 +213,6 @@ class LanguageIDModel(object):
         self.w_final = nn.Parameter(self.hidden_dimensions, self.dimensions)
         self.b_final = nn.Parameter(1, self.dimensions)
         self.learning_rate = 0.02
-        "*** YOUR CODE HERE ***"
 
     def run(self, xs):
         """
